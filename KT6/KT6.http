@@ -1,0 +1,21 @@
+@KT6_HostAddress = http://localhost:5090
+
+# Задание 1: обновление имени, email и возраста
+PUT {{KT6_HostAddress}}/api/users/1?name=Ivan&email=ivan@mail.com&age=30
+
+###
+
+# Задание 2: email меняется, только если имя совпадает
+PUT {{KT6_HostAddress}}/api/users/1/email?name=Ivan&newEmail=new@mail.com
+
+###
+
+# Задание 3: транзакция (история + обновление)
+PUT {{KT6_HostAddress}}/api/users/1/with-history?name=Ivan&email=ivan@mail.com&age=31
+
+###
+
+# Задания 4 и 5: проверка входных данных, обработка исключений, лог
+PUT {{KT6_HostAddress}}/api/users/1/safe?name=Ivan&email=ivan@mail.com&age=32
+
+###
